@@ -50,13 +50,15 @@ jobs:
             PY_VERSION=3.13-slim
 
       - name: Scan Docker image with Trivy
-        uses: aquasecurity/trivy-action@0.20.0
+        uses: aquasecurity/trivy-action@0.30.0
         with:
           image-ref: "cr.nublar.net/python/django:latest"
           format: "sarif"
           output: "trivy-results.sarif"
+          severity: "CRITICAL,HIGH"
 
       - name: Upload Trivy SARIF Report
         uses: github/codeql-action/upload-sarif@v2
+        if: success() || failure()
         with:
           sarif_file: "trivy-results.sarif"
