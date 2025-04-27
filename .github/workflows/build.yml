@@ -1,6 +1,8 @@
 name: Build image
 
 on:
+  schedule:
+    - cron: "42 1 * * 1" # Every Monday at 01:42 UTC
   push:
     branches:
       - main
