@@ -50,7 +50,7 @@ jobs:
           # cache-from: type=registry,ref=your-dockerhub-username/your-image-name:cache
           # cache-to: type=inline
           build-args: |
-            PY_VERSION=3.13-slim
+            PY_VERSION=${{ vars.PY_VERSION}}
 
       - name: Scan Docker image with Trivy
         uses: aquasecurity/trivy-action@0.30.0
