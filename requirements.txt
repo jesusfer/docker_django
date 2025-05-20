@@ -6,13 +6,13 @@ django-cors-headers
 
 requests
 gunicorn
-whitenoise==6.*
-whitenoise[brotli]==6.*
+whitenoise
+whitenoise[brotli]
 
 celery==5.*
 flower==2.*
 django-celery-beat==2.*
 
-redis==5.*
+redis
 
-logfmter==0.*
+logfmter
